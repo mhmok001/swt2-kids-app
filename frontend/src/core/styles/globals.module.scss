@@ -1,0 +1,10 @@
+.iconButton {
+    $button-size: 26px;
+    display: flex;
+    width: $button-size;
+    height: $button-size; 
+    background-color: #E2E2E3; 
+    border-radius: 20px; 
+    align-items: center; 
+    justify-content: center;
+}

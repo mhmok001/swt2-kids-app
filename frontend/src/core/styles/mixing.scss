@@ -1,0 +1,75 @@
+@import 'variables';
+
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+}
+
+@mixin flex-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+@mixin flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+@mixin button-reset {
+  border: none;
+  background: none;
+  cursor: pointer;
+  font: inherit;
+  padding: 0;
+  margin: 0;
+}
+
+@mixin input-reset {
+  border: none;
+  outline: none;
+  font: inherit;
+  background: transparent;
+}
+
+@mixin focus-ring($color: get-color(primary)) {
+  &:focus-visible {
+    outline: 2px solid $color;
+    outline-offset: 2px;
+  }
+}
+
+@mixin focus-state($color: get-color(primary)) {
+  &:focus-visible {
+    outline: 2px solid $color;
+    outline-offset: 2px;
+  }
+}
+
+@mixin hover-state($bg-color: get-color(gray-50), $duration: get-transition(normal)) {
+  transition: background-color $duration ease;
+  
+  &:hover:not(:disabled) {
+    background-color: $bg-color;
+  }
+}
+
+@mixin text-truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+@mixin scrollbar-hidden {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+@mixin fullscreen {
+   width: '100vw';
+   height: '100vh'; 
+}

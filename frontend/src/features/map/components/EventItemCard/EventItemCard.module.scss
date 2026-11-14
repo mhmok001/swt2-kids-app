@@ -1,0 +1,60 @@
+@use 'sass:map';
+@use '../../styles/mixing.module.scss' as mixin;
+
+$border-radius: 16px;
+$content-padding: 20px;
+
+.eventItemCard {
+    @include mixin.flex-column;
+    cursor: pointer;
+    background-color: #fff;
+    padding: 10;
+    border-radius: 16px;
+    color: #000;
+    flex-shrink: 0;
+    &:hover {
+        @include mixin.cardHover
+    }
+}
+
+.eventContainer {
+    flex: 1;
+    overflow-y: scroll;
+    padding: 20;
+    gap: 10;
+}
+
+.eventCategoryItem {
+    padding: 5;
+    width: 32px;
+    height: 32;
+    border-radius: 16px;
+}
+
+
+.imageWrapper {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    border-radius: 10px;
+    aspect-ratio: 16 / 9;
+    display: flex;
+
+    img {
+        flex: 2;
+        object-fit: cover; 
+        object-position: center; 
+    }
+}
+
+.placeholder {
+    display: flex;
+    flex: 2;
+    align-items: center;
+    justify-content: center;
+    background-color: #eee; // grauer Hintergrund
+
+    svg {
+        color: #aaa; // Icon-Farbe
+    }
+}

@@ -1,0 +1,33 @@
+@import '../../../styles/variables.scss';
+
+.button {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	border-radius: 8;
+	text-align: left;
+	font-size: .94em;
+	color: $secondary-label;
+}
+
+.icon {
+	padding: 8;
+	border: none;
+	border-radius: 8;
+	cursor: pointer;
+	transition: all 0.2s ease;
+}
+
+.iconText {
+	padding-left: 10;
+}
+
+.iconColor {
+	background-color: rgb(0, 0, 0, .04);
+}
+
+.iconIsPressed {
+	background-color: $system-blue;
+	color: $system-white;
+	transition: background-color 300ms ease-in;
+}

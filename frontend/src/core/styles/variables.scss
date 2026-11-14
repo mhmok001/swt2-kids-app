@@ -1,0 +1,120 @@
+// styles/_variables.scss
+$colors: (
+  primary: #1976d2,
+  primary-light: #e3f2fd,
+  primary-dark: #1565c0,
+
+  gray-50: #f9fafb,
+  gray-100: #f3f4f6,
+  gray-200: #e5e7eb,
+  gray-400: #9ca3af,
+  gray-500: #6b7280,
+  gray-600: #4b5563,
+  gray-900: #111827,
+
+  custom-gray-01: #E2E2E3,
+  custom-gray-02: #707070,
+
+  white: #ffffff,
+  background: #ffffff,
+  border: #e5e7eb,
+
+  success: #10b981,
+  warning: #f59e0b,
+  error: #ef4444
+);
+
+$spacing: (
+  xs: 4px,
+  sm: 8px,
+  md: 12px,
+  lg: 16px,
+  xl: 20px,
+  xxl: 24px
+);
+
+$borders: (
+  radius-sm: 6px,
+  radius: 8px,
+  radius-lg: 12px,
+  radius-xl: 16px,
+  width: 1px
+);
+
+$transitions: (
+  fast: 0.15s,
+  normal: 0.2s,
+  slow: 0.3s
+);
+
+$typography: (
+  font-size-xs: 12px,
+  font-size-sm: 14px,
+  font-size-lg: 18px,
+  font-size-base: .941rem,
+  font-size-xxl: 1.294rem,
+  font-weight-normal: 400,
+  font-weight-medium: 500,
+  font-weight-semibold: 600,
+  font-weight-bold: 700
+);
+
+$layout: (
+  sidebar-width: 320px,
+  header-height: 64px,
+  nav-item-height: 48px
+);
+
+// Helper function to get values from maps
+@function get-color($key) {
+  @return map-get($colors, $key);
+}
+
+@function get-spacing($key) {
+  @return map-get($spacing, $key);
+}
+
+@function get-border($key) {
+  @return map-get($borders, $key);
+}
+
+@function get-transition($key) {
+  @return map-get($transitions, $key);
+}
+
+$system-blue: #007aff;
+$system-white: #fff;
+$system-white-a8: rgb(255, 255, 255, .08);
+$system-white-a10: rgb(255, 255, 255, .1);
+$system-white-a14: rgb(255, 255, 255, .14);
+$system-white-a17: #ffffff17;
+$system-white-a30: rgb(255, 255, 255, .3);
+$system-white-a40: rgb(255, 255, 255, .4);
+$system-white-a80: rgb(255, 255, 255, .8);
+$system-black: #000;
+$system-black-a4: rgb(0, 0, 0, .04);
+$system-black-a8: rgb(0, 0, 0, .08);
+$system-black-a10: rgb(0, 0, 0, .1);
+$system-black-a14: rgb(0, 0, 0, .14);
+$system-black-a30: rgb(0, 0, 0, .3);
+$system-black-a40: rgb(0, 0, 0, .4);
+$system-black-a50: rgb(0, 0, 0, .5);
+$system-black-a80: rgb(0, 0, 0, .8);
+$system-red: #ff3b30;
+$system-orange: #ff9500;
+$system-green: #34c759;
+$system-background: var(--system-white);
+$photo-gallery-background: rgb(43, 43, 43);
+$tertiary-fill: rgb(118, 118, 128, .12);
+$quarternary-fill: rgb(116, 116, 128, .08);
+$secondary-fill: rgb(120, 120, 128, .16);
+$tooltip-fill: #929299;
+$label: #000;
+$secondary-label: rgb(60, 60, 67, .6);
+$tertiary-label: rgb(60, 60, 67, .3);
+$separator-color: rgb(60, 60, 67, .18);
+$sticky-header-separator-color: rgb(0, 0, 0, .15);
+$focus-outline-blue: #007cff;
+$focus-background-blue: #cce5ff;
+$fixed-header-color: #f9f9f9;
+$button-background-default-a80: rgb(43, 43, 43, .8);

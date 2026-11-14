@@ -1,0 +1,36 @@
+@import '../../../styles/variables.scss';
+
+.button {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	border-radius: 8;
+	text-align: left;
+	font-size: .94em;
+	color: $secondary-label;
+
+	.icon {
+		padding: 8px;
+		border: none;
+		border-radius: 8px;
+		cursor: pointer;
+		transition: all 0.2s ease;
+		background-color: $system-black-a4;
+	}
+
+	.iconWithoutHover {
+		@extend .icon;
+	}
+
+	.iconWithHover {
+		@extend .icon;
+
+		&:hover {
+			background-color: $tertiary-fill; // Nur beim Hover sichtbar!
+		}
+	}
+
+	.iconText {
+		padding-left: 10;
+	}
+}

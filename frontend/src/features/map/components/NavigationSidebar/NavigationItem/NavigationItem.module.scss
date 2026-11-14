@@ -1,0 +1,27 @@
+@use '../../../styles/variables' as variables;
+
+.navItem {
+    display: flex;
+    align-items: center;
+    padding: 8px 10px;
+    margin: 0 0.5rem;;
+    border-radius: 0.5rem;;
+    color: variables.$color-gray-700;
+    text-decoration: none;
+    transition: all variables.$transition-fast;
+    cursor: pointer;
+
+}
+
+.navItemActive {
+    @extend .navItem;
+    background-color: variables.$secondary-fill;
+}
+
+.navItemInActive {
+    @extend .navItem;
+
+    &:hover {
+        background-color: variables.$secondary-fill;
+    }
+}

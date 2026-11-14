@@ -1,0 +1,19 @@
+@use 'sass:map';
+@use '../../styles/variables.scss' as variables;
+
+$border-radius: 16px;
+$content-padding: 20px;
+
+.eventContainer {
+    flex: 1;
+    overflow-y: scroll;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 20px;
+
+    .eventWrapper {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 10;
+    }
+}

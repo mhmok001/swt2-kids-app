@@ -1,0 +1,101 @@
+// Variables
+$color-primary: #3b82f6;
+$color-primary-hover: #2563eb;
+$color-primary-dark: #1e40af;;
+
+$color-gray-50: #f9fafb;
+$color-gray-100: #f3f4f6;
+$color-gray-200: #e5e7eb;
+$color-gray-300: #d1d5db;
+$color-gray-500: #6b7280;
+$color-gray-700: #374151;
+$color-gray-800: #1f2937;
+
+$custom-gray-1: #E2E2E3;
+$custom-gray-01: #E2E2E3;
+$custom-gray-02: #707070;
+
+
+$color-blue-50: #eff6ff;
+$color-green-50: #f0fdf4;
+$color-purple-50: #faf5ff;
+
+$color-white: white;
+$color-shadow: rgba(0, 0, 0, 0.1);
+$color-shadow-light: rgba(0, 0, 0, 0.05);
+$color-shadow-card: rgba(0, 0, 0, 0.06);
+
+// Spacing
+$spacing-xs: 0.25rem;
+$spacing-sm: 0.5rem;
+$spacing-md: 0.75rem;
+
+$spacing-lg: 1rem;
+$spacing-xl: 1.5rem;
+$spacing-2xl: 2rem;
+
+// Sizes
+$icon-sm: 1.25rem;
+$icon-md: 1.5rem;
+$icon-lg: 2rem;
+
+// Transitions
+$transition-fast: 0.2s;
+$transition-normal: 300ms;
+
+// Breakpoints
+$breakpoint-md: 768px;
+$breakpoint-lg: 1024px;
+
+// Breakpoints
+$nav-bnutton-spacing-1: 8px;
+$nav-bnutton-spacing-2: 10px;
+
+$custom-gray-1: #E2E2E3;
+$custom-gray-01: #E2E2E3;
+$custom-gray-02: #707070;
+
+//Sidebar
+$nav-collapsed-width: 71px;
+$nav-expanded-width: 248px;
+
+$sidebar-collapsed-width: 0px;
+$sidebar-expanded-width: 420px;
+
+
+$system-blue: #007aff;
+$system-white: #fff;
+$system-white-a8: rgb(255, 255, 255, .08);
+$system-white-a10: rgb(255, 255, 255, .1);
+$system-white-a14: rgb(255, 255, 255, .14);
+$system-white-a17: #ffffff17;
+$system-white-a30: rgb(255, 255, 255, .3);
+$system-white-a40: rgb(255, 255, 255, .4);
+$system-white-a80: rgb(255, 255, 255, .8);
+$system-black: #000;
+$system-black-a4: rgb(0, 0, 0, .04);
+$system-black-a8: rgb(0, 0, 0, .08);
+$system-black-a10: rgb(0, 0, 0, .1);
+$system-black-a14: rgb(0, 0, 0, .14);
+$system-black-a30: rgb(0, 0, 0, .3);
+$system-black-a40: rgb(0, 0, 0, .4);
+$system-black-a50: rgb(0, 0, 0, .5);
+$system-black-a80: rgb(0, 0, 0, .8);
+$system-red: #ff3b30;
+$system-orange: #ff9500;
+$system-green: #34c759;
+$system-background: var(--system-white);
+$photo-gallery-background: rgb(43, 43, 43);
+$tertiary-fill: rgb(118, 118, 128, .12);
+$quarternary-fill: rgb(116, 116, 128, .08);
+$secondary-fill: rgb(120, 120, 128, .16);  
+$tooltip-fill: #929299;
+$label: #000;
+$secondary-label: rgb(60, 60, 67, .6);
+$tertiary-label: rgb(60, 60, 67, .3);
+$separator-color: rgb(60, 60, 67, .18);
+$sticky-header-separator-color: rgb(0, 0, 0, .15);
+$focus-outline-blue: #007cff;
+$focus-background-blue: #cce5ff;
+$fixed-header-color: #f9f9f9;
+$button-background-default-a80: rgb(43, 43, 43, .8);

@@ -1,0 +1,42 @@
+@use 'sass:map';
+@use '../../../styles/mixing.module.scss' as mixin;
+@use '../../../styles/variables.scss' as variables;
+
+.sidebar {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  @include mixin.nav-shadow;
+  transition: transform .15s ease-out, width .15s ease-in-out, opacity .15s ease;
+  background-color: #fff9;
+  backdrop-filter: blur(50px);
+
+  &[data-state="open"] {
+    width: 420px;
+  }
+
+  &[data-state="closed"] {
+    width: 0px;
+  }
+}
+
+.header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: variables.$nav-bnutton-spacing-1 variables.$nav-bnutton-spacing-2;
+}
+
+.label {
+  color: black;
+  white-space: nowrap;
+  line-height: 30px;
+  font-size: 1.294rem;
+  font-weight: 700;
+}
+
+.contentmain {
+  margin-top: variables.$spacing-md;
+}

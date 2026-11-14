@@ -1,0 +1,27 @@
+package swt2.kids_app.backend.swt2_app.business.event;
+
+import jakarta.persistence.DiscriminatorValue;
+import jakarta.persistence.Entity;
+
+@Entity
+@DiscriminatorValue("KONZERT")
+public class Konzert extends Event {
+    private String artist;
+    private String genre;
+
+    public void setArtist(String artist) {
+        this.artist = artist;
+    }
+
+    public String getArtist() {
+        return artist;
+    }
+
+    public void setGenre(String genre) {
+        this.genre = genre;
+    }
+
+    public String getGenre() {
+        return genre;
+    }
+}

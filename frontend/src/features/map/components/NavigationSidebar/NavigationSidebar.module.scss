@@ -1,0 +1,90 @@
+@use 'sass:map';
+@use '../../styles/mixing.module.scss' as mixin;
+@use '../../styles/variables.scss' as variables;
+
+.navTransition {
+  transition: all variables.$transition-normal ease-in-out;
+}
+
+.navSidebar {
+  // @extend .navTransition;
+  transition: transform .15s ease-out, width .15s ease-in-out, opacity .15s ease;
+  will-change: opacity;
+  border-right: 1px solid variables.$tertiary-fill;
+  display: flex;
+  flex-direction: column;
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(40px);
+  overflow: hidden;
+
+  &[data-state="open"] {
+    width: variables.$nav-expanded-width;
+  }
+
+  &[data-state="closed"] {
+    width: 71px;
+  }
+}
+
+.navHeader {
+  @extend .navTransition;
+  margin: 0 20px;
+  padding-top: 20;
+  padding-left: 0;
+  padding-right: 0;
+  padding-bottom: 13px;
+
+  .navToggle {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    border: none;
+    background: none;
+    border-radius: variables.$spacing-sm;
+    transition: background-color variables.$transition-fast;
+  }
+}
+
+.navBrand {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navLogo {
+  width: variables.$icon-lg;
+  height: variables.$icon-lg;
+  background-color: variables.$color-primary;
+  border-radius: variables.$spacing-sm;
+  @include mixin.flex-center;
+
+  &-text {
+    color: variables.$color-white;
+    font-weight: bold;
+    font-size: 0.875rem;
+  }
+}
+
+.navTitle {
+  font-size: 1.294rem;
+  font-weight: 600;
+  color: variables.$color-gray-800;
+  white-space: nowrap;
+}
+
+.navIcon {
+  width: variables.$icon-md;
+  height: variables.$icon-md;
+  flex-shrink: 0;
+}
+
+.navLabel {
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.navContent {
+  flex: 1;
+  overflow: hidden
+}

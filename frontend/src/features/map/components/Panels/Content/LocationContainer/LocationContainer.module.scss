@@ -1,0 +1,303 @@
+@use 'sass:map';
+@use '../../../../styles/mixing.module.scss' as mixin;
+@use '../../../../styles/variables.scss' as variables;
+
+$border-radius: 16px;
+$content-padding: 20px;
+
+.sidebar {
+  transition: transform .15s ease-out, width .15s ease-in-out, opacity .15s ease;
+
+  @include mixin.flex-column;
+  position: absolute;
+  z-index: 10;
+  height: 100vh;
+  overflow: hidden;
+  background-color: #fff9;
+  backdrop-filter: blur(50px);
+
+  &[data-state="open"] {
+    width: variables.$sidebar-expanded-width;
+  }
+
+  &[data-state="closed"] {
+    width: variables.$sidebar-collapsed-width;
+  }
+}
+
+.parentSidebarExpanded {
+  left: variables.$nav-expanded-width;
+}
+
+.parentSidebarCollapsed {
+  left: variables.$nav-collapsed-width;
+}
+
+.headerWrapper {
+  padding: 20px;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: variables.$spacing-md;
+  @include mixin.headerFontStyle;
+  line-height: 30px;
+  transition: all .3s ease-in-out;
+  position: sticky;
+
+  .headerTitleWrapper {
+    display: flex;
+    align-items: center;
+  }
+
+  .label {
+    color: black;
+    white-space: nowrap;
+    // line-height: 30px;
+    @include mixin.headerFontStyle;
+  }
+
+  .headerNavButton {
+    width: 26;
+    height: 26;
+    margin-right: 8;
+    background-color: #E2E2E3;
+    border-radius: 20;
+    align-items: 'center';
+    padding-left: 2;
+
+    &:hover {
+      transition: all 500ms ease-in-out;
+      transform: scale(1.08);
+      background-color: rgba(0, 0, 0, 0.14);
+    }
+  }
+}
+
+// CollapsibleContent part
+.content {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+.detailContainer {
+  padding: 0 20px 20px 20px;
+}
+
+.imageContainer {
+  padding: 0 20px 20px 20px;
+
+  img {
+    border-radius: $border-radius;
+  }
+}
+
+.descriptionContainer {
+  padding: 0 $content-padding 0 $content-padding;
+
+  .description {
+    position: relative;
+    color: #000;
+    padding: 18px;
+    background-color: #fff;
+    border-radius: $border-radius;
+  }
+}
+
+.headerTitleContainer {
+  display: flex;
+  flex-direction: column;
+  padding: 0px;
+  margin: 0px 0px 2px;
+  font-size: 1.294rem;
+  // line-height: 1.529rem;
+  font-weight: 700;
+  overflow-wrap: break-word;
+  color: #000;
+
+  .label {
+    color: black;
+    word-break: normal;
+    line-height: 1.2;
+    @include mixin.headerFontStyle;
+  }
+
+  .headerSubtitle {
+    @include mixin.subTitle;
+    color: #8e8e93;
+  }
+}
+
+.label {
+  color: black;
+  word-break: normal;
+  line-height: 30px;
+  @include mixin.headerFontStyle;
+}
+
+
+.listWrapper {
+  position: relative;
+  width: 100%;
+  padding-left: 0px !important;
+  line-height: 1.324em;
+  list-style: none;
+
+  .item {
+    @include mixin.flex-row;
+    align-items: center;
+  }
+
+  li {
+    position: relative;
+    color: #000;
+    padding: 18px;
+    background-color: #fff;
+
+    &+li {
+      &::after {
+        content: '';
+        position: absolute;
+        top: 0; // oberer Rand des <li>
+        left: 20;
+        right: 0; // alternative: feste Breite via width: calc(100% - 32px)
+        height: 1px;
+        background-color: variables.$tertiary-fill;
+      }
+    }
+
+    &:first-child {
+      border-top-left-radius: $border-radius;
+      border-top-right-radius: $border-radius;
+    }
+
+    &:last-child {
+      border-bottom-left-radius: $border-radius;
+      border-bottom-right-radius: $border-radius;
+    }
+
+    .iconContainer {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 32;
+      height: 32;
+      background-color: variables.$secondary-fill;
+      border-radius: 19px;
+      margin-right: 10px;
+
+      svg {
+        color: variables.$system-blue;
+      }
+    }
+  }
+
+  .listItem {
+    display: flex;
+    align-items: center;
+
+    .listItemLogo {
+      height: 30px;
+      width: 30px;
+      position: relative;
+      margin-right: 8px;
+      border-radius: 20px;
+    }
+
+    .listItemInfo {
+      display: flex;
+      flex-direction: column;
+      width: calc(100% - 32px);
+
+      .listItemInfoTitle {
+        font-weight: 600;
+        line-height: 1.295em;
+        margin: auto 0;
+        white-space: nowrap;
+      }
+
+      .listItemInfoSubtitle {
+        font-size: .882em;
+        color: #8e8e93;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        line-height: 1.177rem;
+      }
+    }
+
+    svg {
+      width: 1.2em;
+      height: 1.2em;
+    }
+  }
+}
+
+.linking {
+  color: variables.$system-blue;
+  text-decoration: none;
+  cursor: pointer;
+
+  &:hover {
+    text-decoration: underline;
+    text-decoration-color: variables.$system-blue;
+  }
+}
+
+.wrapper {
+  padding: 0 20px;
+}
+
+.infoContainer {
+  $padding: 18px;
+  display: flex;
+  flex-direction: column;
+  color: #000;
+  position: relative;
+  padding: $padding;
+  background-color: #fff;
+
+  .infoItem {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    .title {
+      color: #8e8e93;
+      font-size: 0.9rem;
+      font-weight: 400
+    }
+
+    .description {
+      line-height: .84em;
+      font-size: 1em;
+    }
+
+    // AFTER PSEUDO-ELEMENT
+    &:not(:last-child)::after {
+      content: '';
+      display: block;
+      height: 1px;
+      width: calc(100% + $padding);
+      background: variables.$tertiary-fill;
+      margin-top: 9px;
+      margin-bottom: 9px;
+    }
+  }
+
+  // Border Radius rules
+  &:nth-child(1) {
+    border-top-left-radius: $border-radius;
+    border-top-right-radius: $border-radius;
+  }
+
+  &:last-child {
+    border-bottom-left-radius: $border-radius;
+    border-bottom-right-radius: $border-radius;
+  }
+}

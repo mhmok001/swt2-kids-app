@@ -1,0 +1,28 @@
+@use 'sass:map';
+@use '../../ui/../../../core/styles/variables.scss' as variables;
+
+.searchBar {
+  width: 100%;
+}
+
+.searchIcon {
+  width: 16px;
+  height: 16px;
+}
+
+.clearButton {
+  padding: variables.get-spacing(xs);
+  min-height: auto;
+  border-radius: variables.get-border(radius-xl);
+  background-color: #707070;
+
+  &:hover{
+    background-color: #707070;
+  }
+}
+
+.clearIcon {
+  width: 10px;
+  height: 10px;
+  color: #000;
+}

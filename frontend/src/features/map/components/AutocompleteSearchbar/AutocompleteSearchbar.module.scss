@@ -1,0 +1,35 @@
+@use 'sass:map';
+@use '../../../../core/styles/variables.scss' as variables;
+@import '../../../../core/styles/mixing.scss';
+
+.autocompleteWrapper {
+    position: relative;
+    width: 100%;
+}
+
+.menu {
+    color: black;
+    position: absolute;
+    z-index: 10;
+    width: 100%;
+    max-height: 420px;
+    margin-top: 0px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    border: variables.get-border(width) solid get-color(border);
+    border-radius: variables.get-border(radius-lg);
+    background-color: variables.get-color(gray-50);
+    font-size: map-get(variables.$typography, font-size-base);
+    transition: all variables.get-transition(normal) ease;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+.menuItem {
+    padding: 8px 12px;
+    cursor: pointer;
+}
+
+.menuItem:hover,
+.menuItemActive {
+    background: #eee;
+}

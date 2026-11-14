@@ -1,0 +1,63 @@
+@import '../../../styles/variables.scss';
+@import '../../../styles/mixing.scss';
+
+.container {
+  position: relative;
+  width: 100%;
+}
+
+.input {
+  @include input-reset;
+  width: 100%;
+  padding: get-spacing(md) get-spacing(lg);
+  border: get-border(width) solid get-color(border);
+  border-radius: get-border(radius-lg);
+  background-color: get-color(gray-50);
+  font-size: map-get($typography, font-size-base);
+  transition: all get-transition(normal) ease;
+  color: black;
+  
+  
+  &:focus {
+    outline: 2px solid get-color(primary);
+    outline-offset: -2px;
+    background-color: get-color(white);
+  }
+  
+  .container.error & {
+    border-color: get-color(error);
+    
+    &:focus {
+      outline-color: get-color(error);
+    }
+  }
+}
+
+.leftIcon {
+  position: absolute;
+  left: get-spacing(sm);
+  top: 50%;
+  transform: translateY(-50%);
+  color: get-color(gray-400);
+  pointer-events: none;
+  z-index: 1;
+  
+  ~ .input {
+    padding-left: 30px;
+  }
+}
+
+.rightIcon {
+  position: absolute;
+  right: get-spacing(sm);
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1;
+}
+
+.errorText {
+  display: block;
+  margin-top: get-spacing(xs);
+  font-size: map-get($typography, font-size-xs);
+  color: get-color(error);
+}
